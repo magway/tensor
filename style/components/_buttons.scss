@@ -1,0 +1,54 @@
+$color-button: $base-blue !default;
+$color-button-text: $base-white !default;
+
+.button {
+  display: inline-block;
+  position: relative;
+  background-color: $color-button;
+  color: $color-button-text;
+  margin: 0;
+  border: 0 solid transparent;
+  outline: 0;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%), 0 0 0 1px rgb(0 0 0 / 10%) inset;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: 500;
+  min-width: 7.385em;
+  height: 32px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.45;
+
+  &:hover {
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 15%), 0 0 0 1px rgb(0 0 0 / 10%) inset
+  }
+
+  &:active {
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 15%), 0 0 0 1px rgb(0 0 0 / 10%) inset;
+    transform: translate3d(0, 1px, 0);
+  }
+
+  &--loading {
+    color: transparent;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 23px;
+      height: 23px;
+      margin-top: -12px;
+      margin-left: -12px;
+      background: transparent url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='99' height='99' viewBox='0 0 99 99'%3E%3Cpath fill='%23fff' d='M49.5 98.737C22.23 98.737.263 76.77.263 49.5.263 22.23 22.23.263 49.5.263 76.77.263 98.737 22.23 98.737 49.5c0 2.02-1.767 3.788-3.787 3.788s-3.788-1.768-3.788-3.788c0-22.977-18.684-41.663-41.662-41.663-22.977 0-41.663 18.686-41.663 41.663 0 22.978 18.686 41.662 41.663 41.662 2.02 0 3.788 1.768 3.788 3.788 0 2.02-1.768 3.787-3.788 3.787z'/%3E%3C/svg%3E") center center no-repeat;
+      background-size: contain;
+      animation: fadein .2s 1 linear, spinright .5s infinite linear;
+    }
+  }
+}

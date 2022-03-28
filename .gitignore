@@ -1,0 +1,8 @@
+# IDEA settings
+.idea/
+.run/
+*.iml
+out/
+
+# System files
+.DS_Store

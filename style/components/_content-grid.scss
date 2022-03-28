@@ -1,0 +1,17 @@
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.content__group {
+  display: grid;
+
+  &--one-third {
+    grid-column: 1 / 2;
+  }
+
+  &--full {
+    grid-column: 1 / 4;
+  }
+}

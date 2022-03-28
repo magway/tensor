@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  color: $color-text;
+  background: $color-bg;
+  padding: 0;
+  margin: 0;
+  font-family: $font-family;
+  font-size: 14px;
+}
+
+.content-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.h1 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  margin: 0;
+
+  @include desktop {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+.success {
+  color: $base-green;
+}
+
+.error {
+  color: $base-red;
+}
+
+.bold {
+  font-weight: 700;
+}
