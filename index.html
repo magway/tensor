@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Tensor</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Tensor</title>
 
-    <link rel="stylesheet" href="./style/style.css">
+   <link rel="stylesheet" href="./style/style.css">
 
 </head>
 <body class="body">
-    <div class="content-container">
+<div class="content-container">
 
-        <div class="content">
-            <div class="content__group content__group--full">
-                <h1 class="h1">TODO lists</h1>
-            </div>
+   <div class="content">
+      <div class="content__group content__group--full">
+         <h1 class="h1">TODO lists</h1>
+      </div>
 
-            <div class="content__group content__group--full" id="content-holder"></div>
+      <div class="content__group content__group--full" id="content-holder"></div>
 
-            <div class="content__group content__group--one-third content__action">
-                <button class="button" id="add_button">Load list</button>
-            </div>
-        </div>
+      <div class="content__group content__group--one-third content__action">
+         <button class="button" id="add_button">Load list</button>
+      </div>
+   </div>
 
-    </div>
+</div>
 
-    <script type="module">
-        import TodoList from "./script/todo-list.js";
+<script type="module">
+   import TodoList from "./script/todo-list.js";
 
-        let userID = 1;
-        const todoList = new TodoList({userID: 1});
+   let userID = 1;
+   const todoList = new TodoList({userID: 1});
 
-        document.getElementById('content-holder').append(todoList.element);
+   document.getElementById('content-holder').append(todoList.element);
 
-        const add_button = document.getElementById("add_button");
+   const add_button = document.getElementById("add_button");
 
-        const addTodoList = () => {
-            if (userID >= 10) {
-                alert("No more users left")
-                return;
-            }
+   const addTodoList = () => {
+      if (userID >= 10) {
+         alert("No more users left")
+         return;
+      }
 
-            const newUserID = ++userID;
-            const todoList = new TodoList({userID: newUserID})
+      const newUserID = ++userID;
+      const todoList = new TodoList({userID: newUserID})
 
-            todoList.element.addEventListener('data-loaded', () => {
-                add_button.scrollIntoView({behavior: 'smooth'});
-            });
+      todoList.element.addEventListener('data-loaded', () => {
+         add_button.scrollIntoView({behavior: 'smooth'});
+      });
 
-            document.getElementById('content-holder').append(todoList.element);
-        }
+      document.getElementById('content-holder').append(todoList.element);
+   }
 
-        document.getElementById("add_button").addEventListener('click', addTodoList)
-    </script>
+   document.getElementById("add_button").addEventListener('click', addTodoList)
+</script>
 
 </body>
 </html>
