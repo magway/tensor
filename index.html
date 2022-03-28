@@ -16,36 +16,7 @@
                 <h1 class="h1">TODO lists</h1>
             </div>
 
-            <div class="content__group content__group--full" id="content-holder">
-
-                <div class="todo-list">
-                    <div class="todo-list__head">
-                        <div class="todo-list__row todo-list__row--header">
-                            <div class="todo-list__cell todo-list__cell--head">Id</div>
-                            <div class="todo-list__cell todo-list__cell--head">Title</div>
-                            <div class="todo-list__cell todo-list__cell--head">Status</div>
-                        </div>
-                    </div>
-
-                    <div class="todo-list__body">
-                        <div class="todo-list__row">
-                            <div class="todo-list__cell">2</div>
-                            <div class="todo-list__cell">suscipit repellat esse quibusdam voluptatem incidunt</div>
-                            <div class="todo-list__cell error bold">scheduled</div>
-                        </div>
-                        <div class="todo-list__row">
-                            <div class="todo-list__cell">2</div>
-                            <div class="todo-list__cell">suscipit repellat esse quibusdam voluptatem incidunt</div>
-                            <div class="todo-list__cell success bold">Done</div>
-                        </div>
-                    </div>
-
-                    <div class="todo-list__placeholder">Loading...</div>
-
-                    <div class="todo-list__empty-body">No items</div>
-                </div>
-
-            </div>
+            <div class="content__group content__group--full" id="content-holder"></div>
 
             <div class="content__group content__group--one-third content__action">
                 <button class="button">Load list</button>
@@ -53,5 +24,14 @@
         </div>
 
     </div>
+
+    <script type="module">
+        import TodoList from "./script/todo-list.js";
+
+        const todoList = new TodoList({userID: 1});
+
+        document.getElementById('content-holder').append(todoList.element);
+    </script>
+
 </body>
 </html>
