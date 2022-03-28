@@ -39,6 +39,8 @@ export default class TodoList {
         this.renderRows(data.slice(0, 10));
 
         this.setLoading(false);
+
+        this.dispatchLoadedEvent();
     }
 
     /**
@@ -109,5 +111,13 @@ export default class TodoList {
     destroy() {
         this.element.remove();
         this.body = null;
+    }
+
+    /**
+     * Dispatch event after successful data fetch
+     */
+    dispatchLoadedEvent() {
+        const event = new CustomEvent('data-loaded');
+        this.element.dispatchEvent(event);
     }
 }
